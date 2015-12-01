@@ -68,29 +68,24 @@ for game in gameIdList:
 	selectedData = selectedData.replace(' ⅓','.33')
 	selectedData = selectedData.replace(' ⅔','.63')
 
-	startIndex3 =  selectedData.find("awayTeamNextGames")
+	startIndex3 =  selectedData.find("gameInfo")
 	matchInfo = selectedData[startIndex3:]
-	endIndex3 = matchInfo.find("battersBoxscore")
+	endIndex3 = matchInfo.find("recentVsGames")
 	matchInfo = matchInfo[:endIndex3]
 	#print matchInfo
-	startIndex4 =  matchInfo.find("aName")
-	matchInfoToday = matchInfo[startIndex4:]
-	endIndex4 = matchInfoToday.find("}")
-	matchInfoToday = matchInfoToday[:endIndex4]
-	#print matchInfoToday
 
-	startIndex5 =  matchInfoToday.find("stadium")
-	stadium = matchInfoToday[startIndex5:]
+	startIndex5 =  matchInfo.find("stadium")
+	stadium = matchInfo[startIndex5:]
 	endIndex5 = stadium.find(",")
 	stadium = stadium[:endIndex5]
 
-	startIndex6 =  matchInfoToday.find("gweek")
-	gweek = matchInfoToday[startIndex6:]
+	startIndex6 =  matchInfo.find("gtime")
+	gweek = matchInfo[startIndex6:]
 	endIndex6 = gweek.find(",")
 	gweek = gweek[:endIndex6]
 
-	startIndex7 =  matchInfoToday.find("gdate")
-	gdate = matchInfoToday[startIndex7:]
+	startIndex7 =  matchInfo.find("gdate")
+	gdate = matchInfo[startIndex7:]
 	endIndex7 = gdate.find(",")
 	gdate = gdate[:endIndex7]
 
